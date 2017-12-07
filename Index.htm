@@ -1,0 +1,316 @@
+ <!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+<style>
+    html {
+        font-family: sans-serif;
+        font-size: 2vh;
+        
+    }
+
+/*NavBar*/
+.navbar {
+    overflow: hidden;
+    background-color: #efefef;
+    font-family: Almendra;
+    margin: 1.5px;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: Almendra;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #a0a0a0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+    
+/*SearchBar*/   
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 14px 22px 14px 42px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 20%;
+}
+    
+
+/*Horizontal Tab*/
+body {font-family:Almendra;}
+
+/*TabStyle*/
+div.tab {
+	overflow: hidden;
+	border: 0.5px solid: #e2e0e0;
+	background-color: #efefef;
+}
+
+/*ButtonStyle*/
+div.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+}
+	
+/*BGC change on hover*/
+div.tab button:hover {
+	background-color: #ddd;
+}
+
+/*Current Link Tab class*/
+    div.tab button.active {
+        background-color: #ccc
+    }
+    
+/*TabContent*/
+.tabcontent {
+    background-color: whitesmoke;
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    }  
+    
+
+/*SideNav*/
+body {
+    font-family: Alemendra;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #777777;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c4c6c4;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    
+    
+/*Heading on Image*/ 
+{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container img {margin-bottom: -5px}
+
+.container .content {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+</style>
+</head>
+    
+    
+<body style="background-color:white">
+
+<!--SearchBar-->
+<form>
+<input type="text" name="search" placeholder="Search...">
+</form>
+
+<!--NavBar-->
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+<div class="dropdown">
+    <button class="dropbtn">Functions 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Cognitive Functions</a>
+      <a href="#">Shadow Functions</a>
+      <a href="#">Discovery</a>
+    </div>
+</div>
+</div>
+
+<!--Wording-->
+<hr>
+    <h1 align="left"><font size="24">Title</font></h1> 
+    
+<!--SideNav-->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Archetypes</a>
+  <a href="#">Study</a>
+  <a href="#">History</a>
+</div>
+<span style="font-size:24px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+<!--Tabs-->
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+</script>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Placeholder1')">Placeholder 1</button>
+  <button class="tablinks" onclick="openTab(event, 'Placeholder2')">Placeholder 2</button>
+  <button class="tablinks" onclick="openTab(event, 'Placeholder3')">Placeholder 3</button>
+</div>
+
+<div id="Placeholder1" class="tabcontent">
+  <h3>Placeholder 1</h3>
+  <p><iframe width="700" height="500" src="https://www.youtube.com/embed/gBkIyJ7kf_I">
+</iframe></p>
+</div>
+
+<div id="Placeholder2" class="tabcontent">
+  <h3>Placeholder 2</h3>
+  <p><img src="http://www.centreforconfidence.co.uk/img/myersBriggs_gfx_1a.jpg" alt="Myers Briggs Chart" width="500" height="500" align="middle" style="margin: 50px 30px"></p> 
+</div>
+
+<div id="Placeholder3" class="tabcontent">
+  <h3>Placeholder 3</h3>
+  <p>Insert text</p>
+</div>
+
+<script>
+function openTab(evt, Tab) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(Tab).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
+
+</body>
+</html>
+
+
+
+
